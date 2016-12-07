@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>%title% - Linkbuildingtool</title>
+
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <div class="fixed-nav">
+	<div class="float-left">
+        <a href="index.php"><img src="../images/linkbuilding-logo.png" class="logo"></a>
+    </div>
+    <nav class="float-right">
+        <li><a href="../tool/profile.php">Welcome %userFirstName%</a></li>
+        <li><a href="../linksites.php"><i class="fa fa-link"></i></a></li>
+        <li><a href="../profile.php"><i class="fa fa-user"></i></a></li>
+        <li><a href="../logout.php?logout=true"><i class="fa fa-sign-out"></i></a></li>
+    </nav>
+    <div class="container">
+    	<input ng-model="query[queryBy]" type="text" class="form-control" placeholder="Search...">
+    </div>
+</div>
+
+    <div class="content">
+        <div class="container">
+            <div>
+                <h1>Frequently Asked Questions</h1>
+            </div>
+
+            <div>
+                <div>
+                    Q: How do register a Campaign?
+                </div>
+                <div>A: Go <a href="../tool/addcampaign.php" target="_blank">here</a> or manually go to the tab Campaigns in the navigation bar and click on Add Campaign.</div>
+            </div>
+
+            <div>
+                <div>
+                    Q: How do register a Linksite?
+                </div>
+                <div>A: Go <a href="../tool/addlinksite.php" target="_blank">here</a> or manually go to the tab Linksites in the navigation bar and click on Add Linksite.</div>
+            </div>
+
+            <div>
+                <div>
+                    Q: Will the Campaigns/Linksites be available for all of the other customers?
+                </div>
+                <div>A: No, all the Campaigns and Linksites will only be available to you and your assigned users.</div>
+            </div>
+
+            <div>
+                <div>
+                    Q: How do I add a user?
+                </div>
+                <div class="panel-footer">A: If you're a superuser, go to the Admin page and click Add User. If you're not a superuser, please contact your Employer/SuperUser.</div>
+            </div>
+
+            <div>
+                <div>
+                    Q: How do I see if I'm a SuperUser?
+                </div>
+                <div>A: Go to the homepage, there will be a line which says: Status: User or Status: Admin. If it says Admin you're a SuperUser.</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

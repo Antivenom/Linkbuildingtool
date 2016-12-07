@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>%title% - Linkbuildingtool</title>
+
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="container">
+            <form method="POST">
+                <h2>Log in.</h2>
+                <hr /> %error%
+
+                <div>
+                    <input type="text" class="form-control" name="email" placeholder="Please enter your email address." required />
+                </div>
+
+                <div>
+                    <input type="password" class="form-control" name="password" placeholder="Please enter your password." required />
+                </div>
+
+                <a href="help/forgot.php"><span style="float: right;">Forgot password?</span></a>
+
+                <div class="clearfix"></div>
+                <hr />
+
+                    <button type="submit" name="login">
+                        <i class="fa fa-sign-in"></i> &nbsp; Log In
+                    </button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
