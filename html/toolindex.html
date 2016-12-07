@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>%title% - Linkbuildingtool</title>
+<link rel="stylesheet" href="../css/reset.css" type="text/css" />
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+<div class="fixed-nav">
+	<div class="float-left">
+        <a href="index.php"><img src="../images/linkbuilding-logo.png" class="logo"></a>
+    </div>
+    <nav class="float-right">
+        <li><a href="profile.php">Welcome %userFirstName%</a></li>
+        %linksitesbtn%
+        <li><a href="profile.php"><i class="fa fa-user"></i></a></li>
+        <li><a href="../logout.php?logout=true"><i class="fa fa-sign-out"></i></a></li>
+    </nav>
+    <!-- <div class="container">
+    	<input ng-model="query[queryBy]" type="text" class="form-control" placeholder="Search...">
+    </div>  -->
+</div>
+<div class="content">
+  <div class="container">
+    <h1>Hello, %userName%</h1>
+    <p>Welcome to: Linkbuildingtool.eu!</p>
+    <p>Some information about my account:</p>
+    <div> %amISU% <br />
+      %amountOfCampaigns% / 50 <br />
+      %amountOfLinksites% / 2000 <br />
+      <br />
+      <a href="faq.php">Click here to see a guide on how to properly operate this website.</a> 
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

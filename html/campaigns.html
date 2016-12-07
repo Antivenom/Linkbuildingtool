@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app=CampaignApp>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>%title% - Linkbuildingtool</title>
+
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700' rel='stylesheet' type='text/css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script data-require="angular.js@1.2.0-rc3" data-semver="1.2.0-rc3" src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
+</head>
+
+<body ng-controller="campCTRL">
+
+<div class="fixed-nav">
+	<div class="float-left">
+        <a href="index.php"><img src="../images/linkbuilding-logo.png" class="logo"></a>
+    </div>
+    <nav class="float-right">
+        <li><a href="../tool/profile.php">Welcome %userFirstName%</a></li>
+        <li><a href="../linksites.php"><i class="fa fa-link"></i></a></li>
+        <li><a href="../profile.php"><i class="fa fa-user"></i></a></li>
+        <li><a href="../logout.php?logout=true"><i class="fa fa-sign-out"></i></a></li>
+    </nav>
+    <div class="container">
+    	<input ng-model="query[queryBy]" type="text" class="form-control" placeholder="Search...">
+    </div>
+</div>
+
+    <div class="content">
+        <div class="container">
+
+            <div class="page-title">
+                <h1>Campaigns</h1>
+                <span>List of campaigns:</span>
+            </div>
+
+            <a class="addcampaign-btn" href="../tool/addcampaign.php" role="button" style="text-decoration: none;"><i class="fa fa-plus-circle"></i> Add campaign</a>
+
+            <div class="content-grid">
+                <div class="sort">
+                    <th><a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">Name <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span></a></th>
+                    <th>URL</th>
+                    <th><a href="#" ng-click="sortType = 'bot'; sortReverse = !sortReverse">BOT <span ng-show="sortType == 'bot' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'bot' && sortReverse" class="fa fa-caret-up"></span></a></th>
+                    <th><a href="#" ng-click="sortType = 'active'; sortReverse = !sortReverse">Active <span ng-show="sortType == 'active' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'active' && sortReverse" class="fa fa-caret-up"></span></a></th>
+                    <th>Options</th>
+                </div>
+                <div class="item" ng-repeat="camp in campaigns | filter:query | orderBy:sortType:sortReverse">
+                    <h2><a ng-href="campaign.php?campaign={{camp.id}}">{{camp.name}}</a></h2>
+                    <span><a ng-href="{{camp.url}}" target="_blank">{{camp.url}}</a></span>
+                    <!--
+					<td>{{camp.bot}}</td>
+					<td>{{camp.active}}</td>
+-->
+                    <a class="item-edit" ng-href="editcampaign.php?campaign={{camp.id}}"><i class="fa fa-cog"></i></a>
+                    <a class="item-trash" onClick="return confirm('Warning: Are you sure you want to delete this campaign?');" ng-href="deletecampaign.php?campaign={{camp.id}}"><i class="fa fa-trash-o"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var campaignApp = angular.module("CampaignApp", []);
+    campaignApp.controller("campCTRL", function ($scope) {
+        $scope.query = {};
+        $scope.queryBy = '$';
+        $scope.campaigns = [
+
+		%angularData%
+
+
+]
+        $scope.orderProp = "name";
+    });
+</script>
+
+</html>
