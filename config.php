@@ -2,10 +2,9 @@
 session_start();
 
 $strDB_host = "localhost";
-//$strDB_user = "testssit";
 $strDB_user = "root";
 $strDB_pass = "root";
-$strDB_name = "testssit_1";
+$strDB_name = "site";
 
 $cName = session_name("Linkbuildingtool");
 
