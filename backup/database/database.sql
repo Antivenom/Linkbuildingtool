@@ -23,10 +23,6 @@ CREATE TABLE `campaigns` (
   CONSTRAINT `fk_campaigns_customers1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-INSERT INTO `campaigns` VALUES ('1','1','Farla Webmedia','webmaster@farlawebmedia.nl','Geachte heer/mevrouw,\r\n\r\nOp dit moment zijn wij bezig met de promotie van ###Bedrijf. Wij willen u graag een gratis link aanbieden op ###Startpagina. In ruil daarvoor zouden wij graag een link krijgen op ###Linkpaginalink. Op deze manier krijgen onze beide websites meer waarde en scoren we hoger in de zoekmachines.Â \r\n\r\nIk kijk uit naar uw reactie en als u vragen heeft (of een tegenvoorstel) dan hoor ik het graag.Â \r\n\r\nMet vriendelijke groeten,\r\n\r\n###Naam','http://www.farlawebmedia.nl/','Internet and Telecom','Farla WebMedia is gespecialiseerd in webdesign, domeinnamen, hosting, zoekmachine optimalisatie en internet marketing.','Zoekt u een bedrijf voor webdesign, het maken van een professionele website, website promotie of voor het registeren van een domeinnaam?','1','Peter Farla','1'),
-('2','1','Apple.Startpagina.nl','apple@startpagina.nl',NULL,'http://apple.startpagina.nl','Computers and Electronics','Apple.startpagina.nl: de Apple startpagina van Nederland.\r\n','Apple.startpagina.nl: 300+ handige links over Apple, discussies op het Apple Prikbord, Tweedehands Apple Markt, Nieuws, Homepages en het Apple Weblog.\r\n','1','Peter Farla','1'),
-('3','1','Apres-skikelder.nl','redactie@apres-skikelder.nl',NULL,'http://www.apres-skikelder.nl','People and Society','Apres Ski Feest in Oirschot','Wintersport vieren in hartje Brabant? Dat kan in onze après-ski hut. Een berghut onder de grond met een 100% après-skisfeer en leuke après-ski feesten, ideaal voor personeelsfeesten, verjaardagen en huwelijksfeesten.\r\n','1','P van Heesch','1'),
-('4','1','Bakjes.nl','webmaster@bakjes.nl','','http://www.bakjes.nl','Companies and Industry','Alle soorten plastic bakjes vindt u op Bakjes.nl','Zoekt u Plastic Bakjes? Op Bakjes.nl vindt u het meest uitgebreide overzicht aan Plastic bakjes van Nederland. Hier vindt u het juiste bakje!','1','J. vd Wijdeven','1'); 
 
 
 DROP TABLE IF EXISTS `customers`;
@@ -48,7 +44,6 @@ CREATE TABLE `customers` (
   UNIQUE KEY `customer_id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
-INSERT INTO `customers` VALUES ('1','Farla Webmedia','De Scheper','312','5688 HP','Oirschot','The Netherlands','NL 141625247B01','17127998','0499 – 785 455','info@farlawebmedia.nl','http://www.farlawebmedia.nl','1'); 
 
 
 DROP TABLE IF EXISTS `history`;
@@ -92,9 +87,6 @@ CREATE TABLE `linksites` (
   CONSTRAINT `fk_linksites_customers1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
-INSERT INTO `linksites` VALUES ('12','1','Apple Startpagina','Startpage','Internet and Telecom','5','Beheerd door Mij','http://apple.startpagina.nl','http://apple.startpagina.nl/contact','1','20.00','1','Peter Farla','peter@farlawebmedia.nl','0'),
-('13','1','Webnieuws Startkabel','Startpage','Internet and Telecom','5','Van mijzelf','http://webnieuws.startkabel.nl','http://webnieuws.startkabel.nl/mail/','1','300.00','0','Peter Farla','peter@farlawebmedia.nl','0'),
-('14','1','Brabant.boogolinks.nl','Startpage','Other','5','Van mijzelf','http://brabant.boogolinks.nl/','http://brabant.boogolinks.nl/suggesties.php?onderwerp=brabant','0','0.00','0','Peter Farla','peter@farlawebmedia.nl','0'); 
 
 
 DROP TABLE IF EXISTS `submissions`;
@@ -115,9 +107,6 @@ CREATE TABLE `submissions` (
   CONSTRAINT `fk_submissions_linksites1` FOREIGN KEY (`linksites_id`) REFERENCES `linksites` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
-INSERT INTO `submissions` VALUES ('16','1','13','Accepted','Van mijzelf','http://webnieuws.startkabel.nl','1','2015-12-09 17:50:02'),
-('17','1','12','Submitted','van mij','http://apple.startpagina.nl','1','2015-12-09 17:50:02'),
-('18','1','14','Failed','Van mij denk ik','http://brabant.boogolinks.nl/','1','2015-12-09 15:17:10'); 
 
 
 DROP TABLE IF EXISTS `users`;
@@ -137,9 +126,6 @@ CREATE TABLE `users` (
   CONSTRAINT `fk_users_customers` FOREIGN KEY (`customers_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
-INSERT INTO `users` VALUES ('1','1','max@linkbuildingtool.eu','6654c472c95c2211a7c06768e165885d','Max','van Stijn','1','1'),
-('2','1','peter@farlawebmedia.nl','5f4dcc3b5aa765d61d8327deb882cf99','Peter','Farla','0','1'),
-('3','1','thomas@linkbuildingtool.eu','5f4dcc3b5aa765d61d8327deb882cf99','Thomas','Wiepking','0','0'),
-('999','1','robin@linkbuildingtool.eu','8ee60a2e00c90d7e00d5069188dc115b','Robin','De Robot','1','1'); 
+INSERT INTO `users` VALUES ('999','1','robin@domain.com','8ee60a2e00c90d7e00d5069188dc115b','Robin','De Robot','1','1'); 
 
 
