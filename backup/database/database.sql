@@ -1,6 +1,6 @@
 -- Generation time: Wed, 09 Dec 2015 18:00:03 +0100
 -- Host: localhost
--- DB name: testssit_1
+-- DB name: site
 /*!40030 SET NAMES UTF8 */;
 
 DROP TABLE IF EXISTS `campaigns`;
